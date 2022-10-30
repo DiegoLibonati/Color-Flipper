@@ -40,3 +40,6 @@ I made a web page that allows to generate a random color every time we click on 
 `https://diegolibonati.github.io/DiegoLibonatiWeb/#/projects?q=Color%20flipper%20page`
 
 ## Video
+
+https://user-images.githubusercontent.com/99032604/198900630-8a4972c8-96b3-4d91-8f44-cf2e904a4e1b.mp4
+
