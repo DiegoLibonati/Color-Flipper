@@ -1,85 +1,85 @@
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-    font-size: 10px;
-    list-style:none;
-    font-family: 'Titillium Web', sans-serif;
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-size: 10px;
+  list-style: none;
+  font-family: "Titillium Web", sans-serif;
 }
 
-body{
-    height: 100%;
-    width: 100%;
+body {
+  height: 100%;
+  width: 100%;
 }
 
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 10rem;
-    border-bottom: .2rem solid #000;
-    background: #160F29;
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 10rem;
+  border-bottom: 0.2rem solid #000;
+  background: #160f29;
 }
 
-    .title{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 50%;
-        font-size: 2rem;
-        color: #246A73;
-    }
-
-    .flex-container{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-flow: row wrap;
-        width: 50%;
-        height: 10rem;
-    }
-
-        .flex-item{
-            font-size: 1.5rem;
-            padding: 1rem;
-            color: #246A73;
-        }
-    
-section{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 60rem;
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  font-size: 2rem;
+  color: #246a73;
 }
 
-    .contenedor{
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        flex-flow: column wrap;
-        width: 35rem;
-        height: 30rem;
-        background: #160F29;
-    }
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  width: 50%;
+  height: 10rem;
+}
 
-        .contenedor_div{
-            color: #246A73;
-            font-size: 2.5rem;
-        }
+.flex-item {
+  font-size: 1.5rem;
+  padding: 1rem;
+  color: #246a73;
+}
 
-        .contenedor_div span{
-            color: #246A73;
-            font-size: 2.5rem;
-        }
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60rem;
+}
 
-    #hola{
-        width: 90%;
-        height: 5rem;
-        font-size: 3rem;
-        background: none;
-        border: .1rem solid #246A73;
-        color:#246A73;
-        cursor: pointer;
-    }
+.contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: column wrap;
+  width: 35rem;
+  height: 30rem;
+  background: #160f29;
+}
+
+.contenedor_div {
+  color: #246a73;
+  font-size: 2.5rem;
+}
+
+.contenedor_div span {
+  color: #246a73;
+  font-size: 2.5rem;
+}
+
+#btnFlip {
+  width: 90%;
+  height: 5rem;
+  font-size: 3rem;
+  background: none;
+  border: 0.1rem solid #246a73;
+  color: #246a73;
+  cursor: pointer;
+}
