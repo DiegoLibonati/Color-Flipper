@@ -37,7 +37,7 @@ I made a web page that allows to generate a random color every time we click on 
 
 ## Portfolio Link
 
-`https://diegolibonati.github.io/DiegoLibonatiWeb/#/projects?q=Color%20flipper%20page`
+`https://diegolibonati.github.io/DiegoLibonatiWeb/#/projects?q=Color%20Flipper%20Page`
 
 ## Video
 
