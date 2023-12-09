@@ -23,21 +23,9 @@ I made a web page that allows to generate a random color every time we click on 
 2. CSS3
 3. HTML5
 
-## Galery
-
-![colorflipper](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Imagenes/Colorflipper-0.jpg)
-
-![colorflipper](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Imagenes/Colorflipper-1.jpg)
-
-![colorflipper](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Imagenes/Colorflipper-2.jpg)
-
-![colorflipper](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Imagenes/Colorflipper-3.jpg)
-
-![colorflipper](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Imagenes/Colorflipper-4.jpg)
-
 ## Portfolio Link
 
-`https://diegolibonati.github.io/DiegoLibonatiWeb/#/projects?q=Color%20Flipper%20Page`
+[`https://www.diegolibonati.com.ar/#/project/78`](https://www.diegolibonati.com.ar/#/project/78)
 
 ## Video
 
