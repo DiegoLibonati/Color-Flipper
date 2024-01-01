@@ -1,12 +1,12 @@
-const btnFlip = document.getElementById("btnFlip");
-const colorHexText = document.querySelector(".colorHexText");
+const btnFlip = document.getElementById("btnFlip") as HTMLButtonElement;
+const colorHexText = document.querySelector(".colorHexText") as HTMLSpanElement;
 
-const hexLetters = "0123456789ABCDEF";
+const hexLetters: string = "0123456789ABCDEF";
 
 btnFlip.addEventListener("click", () => {
-  let hexColor = "#";
+  let hexColor: string = "#";
 
-  for (let i = 0; i <= 5; i++) {
+  for (let i: number = 0; i <= 5; i++) {
     hexColor += hexLetters.charAt(
       Math.floor(Math.random() * hexLetters.length)
     );
