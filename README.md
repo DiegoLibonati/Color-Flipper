@@ -1,4 +1,4 @@
-# Color-Flipper-Page
+# Color Flipper
 
 ## Getting Started
 
@@ -32,7 +32,7 @@ I made a web page that allows to generate a random color every time we click on 
 
 ## Portfolio Link
 
-[`https://www.diegolibonati.com.ar/#/project/78`](https://www.diegolibonati.com.ar/#/project/78)
+[`https://www.diegolibonati.com.ar/#/project/Color-Flipper`](https://www.diegolibonati.com.ar/#/project/Color-Flipper)
 
 ## Video
 
