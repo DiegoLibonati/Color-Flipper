@@ -1,9 +1,8 @@
-const btnFlip = document.getElementById("btnFlip") as HTMLButtonElement;
-const colorHexText = document.querySelector(".colorHexText") as HTMLSpanElement;
+import { btnFlip, colorHexText } from "./constants/elements";
 
 const hexLetters: string = "0123456789ABCDEF";
 
-btnFlip.addEventListener("click", () => {
+const changeColor = (): void => {
   let hexColor: string = "#";
 
   for (let i: number = 0; i <= 5; i++) {
@@ -15,6 +14,11 @@ btnFlip.addEventListener("click", () => {
   document.body.style.backgroundColor = `${hexColor}`;
 
   colorHexText.textContent = hexColor;
-
   colorHexText.style.color = hexColor;
-});
+};
+
+const onInit = () => {
+  btnFlip.addEventListener("click", changeColor);
+};
+
+document.addEventListener("DOMContentLoaded", onInit);
