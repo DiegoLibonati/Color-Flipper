@@ -1,4 +1,5 @@
 import { screen, within } from "@testing-library/dom";
+import user from "@testing-library/user-event";
 
 import fs from "fs";
 import path from "path";
@@ -57,7 +58,7 @@ describe("When the page is rendered for the first time.", () => {
 });
 
 describe("When the Flip button is touched.", () => {
-  test("It must change the color of the body and must also change the color of the text.", () => {
+  test("It must change the color of the body and must also change the color of the text.", async () => {
     const color = screen.getByText(new RegExp(INITIAL_COLOR));
     const btnFlip = screen.getByRole("button", {
       name: /flip color/i,
@@ -67,7 +68,7 @@ describe("When the Flip button is touched.", () => {
     expect(btnFlip).toBeInTheDocument();
     expect(document.body.style.backgroundColor).toBe("");
 
-    btnFlip.click();
+    await user.click(btnFlip);
 
     const newColorText = document.querySelector(".colorHexText")?.textContent;
 
