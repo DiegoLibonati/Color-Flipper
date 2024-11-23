@@ -4,21 +4,8 @@
 
 1. Clone the repository
 2. Join to the correct path of the clone
-3. Install LiveServer extension from Visual Studio Code [OPTIONAL]
-4. Click in "Go Live" from LiveServer extension
-
----
-
-1. Clone the repository
-2. Join to the correct path of the clone
-3. Open index.html in your favorite navigator
-
----
-
-1. Clone the repository
-2. Join to the correct path of the clone
-3. Execute: `yarn install`
-4. Execute: `yarn dev`
+3. Execute: `yarn install` or `npm install`
+4. Execute: `yarn dev` or `npm dev`
 
 ## Description
 
@@ -63,47 +50,4 @@ https://user-images.githubusercontent.com/99032604/198900630-8a4972c8-96b3-4d91-
 ## Testing
 
 1. Join to the correct path of the clone
-2. Execute: `yarn install`
-3. Execute: `yarn test`
-
-## Documentation
-
-In this case we get the button that will be activated every time we want to change the background color:
-
-```
-export const btnFlip = document.getElementById("btnFlip") as HTMLButtonElement;
-export const colorHexText = document.querySelector(
-  ".colorHexText"
-) as HTMLSpanElement;
-```
-
-Let us assign to the variable `hexLetters` all possible letters without repeating that can be found in a hexadecimal color:
-
-```
-const hexLetters: string = "0123456789ABCDEF";
-```
-
-To the `btnFlip` we assign a click event that when receiving a click will set a variable that will be the color to assign. Then it will go through the maximum amount of letters that has a hexdecimal, in each iteration will be added to the `hexColor` a random character of `hexLetters` at the end of iteration will be assigned the background and the text pertinent to the color:
-
-```
-const changeColor = (): void => {
-  let hexColor: string = "#";
-
-  for (let i: number = 0; i <= 5; i++) {
-    hexColor += hexLetters.charAt(
-      Math.floor(Math.random() * hexLetters.length)
-    );
-  }
-
-  document.body.style.backgroundColor = `${hexColor}`;
-
-  colorHexText.textContent = hexColor;
-  colorHexText.style.color = hexColor;
-};
-
-const onInit = () => {
-  btnFlip.addEventListener("click", changeColor);
-};
-
-document.addEventListener("DOMContentLoaded", onInit);
-```
+2. Execute: `yarn test`
