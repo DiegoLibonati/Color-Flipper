@@ -1,18 +1,15 @@
 import { getElements } from "./getElements";
 
-const INITIAL_HTML: string = `
-    <main>
-        <div class="contenedor_div">
-            Background color: <span class="colorHexText">#FFFFFF</span>
-        </div>
+import fs from "fs";
+import path from "path";
 
-        <button id="btnFlip" aria-label="flip color">Flip</button>
-    </main>
-`;
+const INITIAL_HTML: string = fs.readFileSync(
+  path.resolve(__dirname, "../../index.html"),
+  "utf8"
+);
 
 beforeEach(() => {
-  const body = INITIAL_HTML;
-
+  const body = INITIAL_HTML.match(/<body[^>]*>([\s\S]*?)<\/body>/i)![1];
   document.body.innerHTML = body;
 });
 
