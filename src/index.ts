@@ -1,8 +1,10 @@
-import { btnFlip, colorHexText } from "./constants/elements";
+import { getElements } from "./helpers/getElements";
 
 const hexLetters: string = "0123456789ABCDEF";
 
 const changeColor = (): void => {
+  const { colorHexText } = getElements();
+
   let hexColor: string = "#";
 
   for (let i: number = 0; i <= 5; i++) {
@@ -18,6 +20,8 @@ const changeColor = (): void => {
 };
 
 const onInit = () => {
+  const { btnFlip } = getElements();
+
   btnFlip.addEventListener("click", changeColor);
 };
 
