@@ -8,8 +8,6 @@ import { OFFICIAL_BODY } from "./tests/jest.setup";
 const INITIAL_COLOR = "#FFFFFF";
 
 beforeEach(() => {
-  jest.resetModules();
-
   document.body.innerHTML = OFFICIAL_BODY;
 
   require("./index.ts");
