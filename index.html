@@ -12,28 +12,31 @@
       href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" type="text/css" href="./src/index.css" />
     <link rel="stylesheet" type="text/css" href="./src/styles.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <h1 class="title">Color Flipper</h1>
+    <header class="header">
+      <nav class="header__nav">
+        <h1 class="header__nav__title">Color Flipper</h1>
 
-        <ul class="flex-container">
-          <li class="flex-item">HexColors</li>
-          <li class="flex-item">DiegoLibonati</li>
+        <ul class="header__nav__list">
+          <li class="header__nav__list__item">HexColors</li>
+          <li class="header__nav__list__item">DiegoLibonati</li>
         </ul>
       </nav>
     </header>
 
-    <main>
-      <section>
-        <div class="contenedor">
-          <div class="contenedor_div">
-            Background color: <span class="colorHexText">#FFFFFF</span>
+    <main class="main">
+      <section class="section">
+        <div class="card">
+          <div class="card__text">
+            Background color: <span class="card__text__hex">#FFFFFF</span>
           </div>
 
-          <button id="btnFlip" aria-label="flip color">Flip</button>
+          <button id="btnFlip" aria-label="flip" aria-label="flip color">
+            Flip
+          </button>
         </div>
       </section>
     </main>
