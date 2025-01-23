@@ -16,25 +16,30 @@
     <link rel="stylesheet" type="text/css" href="./src/styles.css" />
   </head>
   <body>
-    <header class="header">
-      <nav class="header__nav">
-        <h1 class="header__nav__title">Color Flipper</h1>
+    <header class="header-wrapper">
+      <nav class="header-nav">
+        <h1 class="header-nav__title">Color Flipper</h1>
 
-        <ul class="header__nav__list">
-          <li class="header__nav__list__item">HexColors</li>
-          <li class="header__nav__list__item">DiegoLibonati</li>
+        <ul class="header-nav__list">
+          <li class="header-nav__list-item">HexColors</li>
+          <li class="header-nav__list-item">DiegoLibonati</li>
         </ul>
       </nav>
     </header>
 
-    <main class="main">
-      <section class="section">
+    <main class="main-app">
+      <section class="card-wrapper">
         <div class="card">
           <div class="card__text">
-            Background color: <span class="card__text__hex">#FFFFFF</span>
+            Background color: <span class="card__text-hex">#FFFFFF</span>
           </div>
 
-          <button id="btnFlip" aria-label="flip" aria-label="flip color">
+          <button
+            id="btnFlip"
+            class="card__btn-flip"
+            aria-label="flip"
+            aria-label="flip color"
+          >
             Flip
           </button>
         </div>

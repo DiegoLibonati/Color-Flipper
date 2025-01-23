@@ -78,7 +78,7 @@ describe("index.ts", () => {
       await user.click(btnFlip);
 
       const newColorText =
-        document.querySelector(".card__text__hex")?.textContent;
+        document.querySelector(".card__text-hex")?.textContent;
 
       expect(color.textContent).toBe(newColorText);
       expect(
