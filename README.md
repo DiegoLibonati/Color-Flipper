@@ -22,6 +22,7 @@ I made a web page that allows to generate a random color every time we click on 
 #### Dependencies
 
 ```
+There are no dependencies.
 ```
 
 #### devDependencies
