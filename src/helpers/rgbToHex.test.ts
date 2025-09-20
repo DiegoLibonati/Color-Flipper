@@ -1,4 +1,4 @@
-import { rgbToHex } from "./rgbToHex";
+import { rgbToHex } from "@src/helpers/rgbToHex";
 
 describe("rgxToHex.ts", () => {
   describe("General Tests.", () => {

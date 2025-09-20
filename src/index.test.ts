@@ -1,9 +1,9 @@
 import { screen, within } from "@testing-library/dom";
 import user from "@testing-library/user-event";
 
-import { OFFICIAL_BODY } from "../tests/jest.constants";
+import { OFFICIAL_BODY } from "@tests/jest.constants";
 
-import { rgbToHex } from "./helpers/rgbToHex";
+import { rgbToHex } from "@src/helpers/rgbToHex";
 
 describe("index.ts", () => {
   describe("When the page is rendered for the first time.", () => {
