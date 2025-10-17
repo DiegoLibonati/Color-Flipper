@@ -35,49 +35,6 @@
   color: var(--secondary-color);
 }
 
-.main-app {
-  width: 100%;
-  height: calc(100% - 7rem);
-}
-
-.card-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.card {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-flow: column wrap;
-  width: 90%;
-  height: 15rem;
-  background: var(--primary-color);
-}
-
-.card__text {
-  color: var(--secondary-color);
-  font-size: 1.25rem;
-}
-
-.card__hex {
-  color: var(--secondary-color);
-  font-size: 1.25rem;
-}
-
-.card__btn-flip {
-  width: 90%;
-  height: 3rem;
-  font-size: 1.5rem;
-  background: none;
-  border: 0.1rem solid var(--secondary-color);
-  color: var(--secondary-color);
-  cursor: pointer;
-}
-
 @media only screen and (min-width: 1024px) {
   .header-nav__title {
     width: 50%;
@@ -85,9 +42,5 @@
 
   .header-nav__list {
     display: flex;
-  }
-
-  .card {
-    width: 25rem;
   }
 }

@@ -33,7 +33,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="./src/index.css" />
-    <link rel="stylesheet" type="text/css" href="./src/styles.css" />
+    <link rel="stylesheet" type="text/css" href="./src/styles/css/header.css" />
   </head>
   <body>
     <header class="header-wrapper">
@@ -47,25 +47,7 @@
       </nav>
     </header>
 
-    <main class="main-app">
-      <section class="card-wrapper">
-        <div class="card">
-          <div class="card__text">
-            Background color: <span class="card__hex">#FFFFFF</span>
-          </div>
-
-          <button
-            id="btnFlip"
-            class="card__btn-flip"
-            aria-label="flip"
-            aria-label="flip color"
-          >
-            Flip
-          </button>
-        </div>
-      </section>
-    </main>
-
+    <div id="app"></div>
     <script type="module" src="./src/index.ts"></script>
   </body>
 </html>
