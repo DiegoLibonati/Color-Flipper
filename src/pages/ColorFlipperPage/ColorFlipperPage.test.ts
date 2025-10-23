@@ -37,7 +37,9 @@ describe("ColorFlipperPage.ts", () => {
 
       expect(container).toBeInstanceOf(HTMLElement);
       expect(container.className).toBe("color-flipper-page");
-      expect(container.querySelector(".card-wrapper")).toBeInTheDocument();
+      expect(
+        container.querySelector<HTMLElement>(".card-wrapper")
+      ).toBeInTheDocument();
     });
 
     test("It should render card with title and button", () => {
