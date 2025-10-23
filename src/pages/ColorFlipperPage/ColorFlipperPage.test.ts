@@ -1,4 +1,4 @@
-import { screen, waitFor } from "@testing-library/dom";
+import { screen } from "@testing-library/dom";
 import user from "@testing-library/user-event";
 
 import { ColorFlipperPage } from "@src/pages/ColorFlipperPage/ColorFlipperPage";
@@ -14,7 +14,7 @@ type RenderComponent = {
 const renderComponent = (): RenderComponent => {
   const container = ColorFlipperPage();
   document.body.appendChild(container);
-  return { container };
+  return { container: container };
 };
 
 jest.mock("@src/constants/vars", () => ({
