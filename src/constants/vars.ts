@@ -1,1 +1,1 @@
-export const hexLetters: string = "0123456789ABCDEF";
+export const hexLetters = "0123456789ABCDEF";

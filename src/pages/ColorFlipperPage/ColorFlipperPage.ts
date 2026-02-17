@@ -1,29 +1,11 @@
-import { hexLetters } from "@src/constants/vars";
+import type { Page } from "@/types/pages";
 
-import "@src/pages/ColorFlipperPage/ColorFlipperPage.css";
+import { hexLetters } from "@/constants/vars";
 
-const changeColor = (): void => {
-  const colorFlipperPage = document.querySelector<HTMLElement>(
-    ".color-flipper-page"
-  );
-  const colorHexText = document.querySelector<HTMLSpanElement>(".card__hex");
+import "@/pages/ColorFlipperPage/ColorFlipperPage.css";
 
-  let hexColor: string = "#";
-
-  for (let i: number = 0; i <= 5; i++) {
-    hexColor += hexLetters.charAt(
-      Math.floor(Math.random() * hexLetters.length)
-    );
-  }
-
-  colorFlipperPage!.style.backgroundColor = `${hexColor}`;
-
-  colorHexText!.textContent = hexColor;
-  colorHexText!.style.color = hexColor;
-};
-
-export const ColorFlipperPage = (): HTMLElement => {
-  const main = document.createElement("main");
+export const ColorFlipperPage = (): Page => {
+  const main = document.createElement("main") as Page;
   main.className = "color-flipper-page";
 
   main.innerHTML = `
@@ -36,7 +18,6 @@ export const ColorFlipperPage = (): HTMLElement => {
             <button
                 id="btnFlip"
                 class="card__btn-flip"
-                aria-label="flip"
                 aria-label="flip color"
             >
                 Flip
@@ -47,7 +28,29 @@ export const ColorFlipperPage = (): HTMLElement => {
 
   const btnFlip = main.querySelector<HTMLButtonElement>(".card__btn-flip");
 
+  const changeColor = (): void => {
+    const colorHexText = main.querySelector<HTMLSpanElement>(".card__hex");
+
+    if (!colorHexText) return;
+
+    let hexColor = "#";
+
+    for (let i = 0; i < 6; i++) {
+      hexColor += hexLetters.charAt(
+        Math.floor(Math.random() * hexLetters.length)
+      );
+    }
+
+    main.style.backgroundColor = hexColor;
+    colorHexText.textContent = hexColor;
+    colorHexText.style.color = hexColor;
+  };
+
   btnFlip?.addEventListener("click", changeColor);
+
+  main.cleanup = (): void => {
+    btnFlip?.removeEventListener("click", changeColor);
+  };
 
   return main;
 };

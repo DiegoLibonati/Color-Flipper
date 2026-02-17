@@ -18,16 +18,16 @@
   flex-flow: column wrap;
   width: 90%;
   height: 15rem;
-  background: var(--primary-color);
+  background: var(--color-primary);
 }
 
 .card__text {
-  color: var(--secondary-color);
+  color: var(--color-secondary);
   font-size: 1.25rem;
 }
 
 .card__hex {
-  color: var(--secondary-color);
+  color: var(--color-secondary);
   font-size: 1.25rem;
 }
 
@@ -36,8 +36,8 @@
   height: 3rem;
   font-size: 1.5rem;
   background: none;
-  border: 0.1rem solid var(--secondary-color);
-  color: var(--secondary-color);
+  border: 0.1rem solid var(--color-secondary);
+  color: var(--color-secondary);
   cursor: pointer;
 }
 
