@@ -31,7 +31,7 @@ I made a web page that allows to generate a random color every time we click on 
 #### Dependencies
 
 ```
-There are no dependencies.
+No production dependencies - Pure Vanilla TypeScript
 ```
 
 #### devDependencies
@@ -75,3 +75,7 @@ For coverage report:
 ```bash
 npm run test:coverage
 ```
+
+## Known Issues
+
+None at the moment.
