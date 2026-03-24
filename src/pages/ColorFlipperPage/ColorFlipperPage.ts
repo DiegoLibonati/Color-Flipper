@@ -18,7 +18,7 @@ export const ColorFlipperPage = (): Page => {
             <button
                 id="btnFlip"
                 class="card__btn-flip"
-                aria-label="flip color"
+                aria-label="Flip background color"
             >
                 Flip
             </button>

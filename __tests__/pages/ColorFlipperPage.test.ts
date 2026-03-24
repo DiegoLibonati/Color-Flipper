@@ -46,7 +46,9 @@ describe("ColorFlipperPage", () => {
   it("should render flip button", () => {
     renderPage();
 
-    const flipButton = screen.getByRole("button", { name: "flip color" });
+    const flipButton = screen.getByRole("button", {
+      name: "Flip background color",
+    });
     expect(flipButton).toBeInTheDocument();
     expect(flipButton).toHaveAttribute("id", "btnFlip");
   });
@@ -55,7 +57,9 @@ describe("ColorFlipperPage", () => {
     const user = userEvent.setup();
     renderPage();
 
-    const flipButton = screen.getByRole("button", { name: "flip color" });
+    const flipButton = screen.getByRole("button", {
+      name: "Flip background color",
+    });
     const main = document.querySelector<HTMLElement>(".color-flipper-page");
     const initialBgColor = main?.style.backgroundColor;
 
@@ -69,7 +73,9 @@ describe("ColorFlipperPage", () => {
     const user = userEvent.setup();
     renderPage();
 
-    const flipButton = screen.getByRole("button", { name: "flip color" });
+    const flipButton = screen.getByRole("button", {
+      name: "Flip background color",
+    });
     const hexText = document.querySelector<HTMLSpanElement>(".card__hex");
 
     await user.click(flipButton);
@@ -82,7 +88,9 @@ describe("ColorFlipperPage", () => {
     const user = userEvent.setup();
     renderPage();
 
-    const flipButton = screen.getByRole("button", { name: "flip color" });
+    const flipButton = screen.getByRole("button", {
+      name: "Flip background color",
+    });
     const hexText = document.querySelector<HTMLSpanElement>(".card__hex");
 
     await user.click(flipButton);
@@ -100,7 +108,9 @@ describe("ColorFlipperPage", () => {
     const user = userEvent.setup();
     renderPage();
 
-    const flipButton = screen.getByRole("button", { name: "flip color" });
+    const flipButton = screen.getByRole("button", {
+      name: "Flip background color",
+    });
     const hexText = document.querySelector<HTMLSpanElement>(".card__hex");
 
     await user.click(flipButton);
@@ -120,7 +130,9 @@ describe("ColorFlipperPage", () => {
     const user = userEvent.setup();
     renderPage();
 
-    const flipButton = screen.getByRole("button", { name: "flip color" });
+    const flipButton = screen.getByRole("button", {
+      name: "Flip background color",
+    });
     const hexText = document.querySelector<HTMLSpanElement>(".card__hex");
 
     for (let i = 0; i < 5; i++) {
