@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 
 import type { Page } from "@/types/pages";
 
-import { ColorFlipperPage } from "@/pages/ColorFlipperPage/ColorFlipperPage";
+import ColorFlipperPage from "@/pages/ColorFlipperPage/ColorFlipperPage";
 
 import { rgbToHex } from "@/helpers/rgbToHex";
 

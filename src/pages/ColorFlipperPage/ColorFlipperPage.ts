@@ -4,7 +4,7 @@ import { hexLetters } from "@/constants/vars";
 
 import "@/pages/ColorFlipperPage/ColorFlipperPage.css";
 
-export const ColorFlipperPage = (): Page => {
+const ColorFlipperPage = (): Page => {
   const main = document.createElement("main") as Page;
   main.className = "color-flipper-page";
 
@@ -54,3 +54,5 @@ export const ColorFlipperPage = (): Page => {
 
   return main;
 };
+
+export default ColorFlipperPage;

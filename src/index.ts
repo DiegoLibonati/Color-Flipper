@@ -1,5 +1,5 @@
 import "@/index.css";
-import { ColorFlipperPage } from "@/pages/ColorFlipperPage/ColorFlipperPage";
+import ColorFlipperPage from "@/pages/ColorFlipperPage/ColorFlipperPage";
 
 const onInit = (): void => {
   const app = document.querySelector<HTMLDivElement>("#app");
