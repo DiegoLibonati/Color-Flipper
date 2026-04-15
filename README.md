@@ -1,4 +1,4 @@
-# Color Flipper
+# ColorFlipper
 
 ## Educational Purpose
 
@@ -17,7 +17,9 @@ The application will open automatically at `http://localhost:3000`
 
 ## Description
 
-I made a web page that allows to generate a random color every time we click on `Flip`, it will be put as background and it will also tell us the color in hex to be able to use it anywhere.
+**ColorFlipper** is a minimalist web application that generates random hex colors on demand. Every time you click the **Flip** button, the app picks a new color by randomly combining characters from the hexadecimal alphabet (`0–9`, `A–F`) to form a 6-character hex code. The generated color is instantly applied as the full-page background, giving you an immediate and immersive visual preview. At the same time, the hex value (e.g. `#A3F5C1`) is displayed on screen and its own text color is updated to match, creating a self-referential color label that stays legible against any background.
+
+The use case is straightforward: designers, developers, or anyone working with color can use ColorFlipper as a quick inspiration tool to discover color combinations, test how a hue looks at full saturation across the entire viewport, or simply grab a hex code to paste into a stylesheet, design file, or color picker. There are no inputs to fill out, no palettes to configure, and no extra steps — one click is all it takes.
 
 ## Technologies used
 
@@ -59,11 +61,7 @@ No production dependencies - Pure Vanilla TypeScript
 
 ## Portfolio Link
 
-[`https://www.diegolibonati.com.ar/#/project/Color-Flipper`](https://www.diegolibonati.com.ar/#/project/Color-Flipper)
-
-## Video
-
-https://user-images.githubusercontent.com/99032604/198900630-8a4972c8-96b3-4d91-8f44-cf2e904a4e1b.mp4
+[`https://www.diegolibonati.com.ar/#/project/color-flipper`](https://www.diegolibonati.com.ar/#/project/color-flipper)
 
 ## Testing
 

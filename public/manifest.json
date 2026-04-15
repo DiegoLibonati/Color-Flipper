@@ -1,7 +1,7 @@
 {
-  "name": "Color Flipper",
-  "short_name": "Color Flipper",
-  "description": "I made a web page that allows to generate a random color every time we click on `Flip`, it will be put as background and it will also tell us the color in hex to be able to use it anywhere.",
+  "name": "ColorFlipper",
+  "short_name": "ColorFlipper",
+  "description": "ColorFlipper is a minimalist web application that generates random hex colors on demand.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

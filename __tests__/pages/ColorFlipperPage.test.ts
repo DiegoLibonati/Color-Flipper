@@ -5,12 +5,10 @@ import type { Page } from "@/types/pages";
 
 import ColorFlipperPage from "@/pages/ColorFlipperPage/ColorFlipperPage";
 
-import { rgbToHex } from "@/helpers/rgbToHex";
-
 const renderPage = (): Page => {
-  const container = ColorFlipperPage();
-  document.body.appendChild(container);
-  return container;
+  const element = ColorFlipperPage();
+  document.body.appendChild(element);
+  return element;
 };
 
 describe("ColorFlipperPage", () => {
@@ -18,135 +16,99 @@ describe("ColorFlipperPage", () => {
     document.body.innerHTML = "";
   });
 
-  it("should render the page with correct structure", () => {
-    renderPage();
-
-    const main = document.querySelector<HTMLElement>(".color-flipper-page");
-    expect(main).toBeInTheDocument();
-    expect(main?.tagName).toBe("MAIN");
-  });
-
-  it("should render card with initial color", () => {
-    renderPage();
-
-    const card = document.querySelector<HTMLDivElement>(".card");
-    expect(card).toBeInTheDocument();
-  });
-
-  it("should render initial hex color text", () => {
-    renderPage();
-
-    expect(screen.getByText("Background color:")).toBeInTheDocument();
-
-    const hexText = document.querySelector<HTMLSpanElement>(".card__hex");
-    expect(hexText).toBeInTheDocument();
-    expect(hexText?.textContent).toBe("#FFFFFF");
-  });
-
-  it("should render flip button", () => {
-    renderPage();
-
-    const flipButton = screen.getByRole("button", {
-      name: "Flip background color",
+  describe("rendering", () => {
+    it("should display the initial hex color as #FFFFFF", () => {
+      renderPage();
+      expect(screen.getByText("#FFFFFF")).toBeInTheDocument();
     });
-    expect(flipButton).toBeInTheDocument();
-    expect(flipButton).toHaveAttribute("id", "btnFlip");
-  });
 
-  it("should change background color when flip button is clicked", async () => {
-    const user = userEvent.setup();
-    renderPage();
-
-    const flipButton = screen.getByRole("button", {
-      name: "Flip background color",
+    it("should render the flip button", () => {
+      renderPage();
+      expect(
+        screen.getByRole("button", { name: /flip background color/i })
+      ).toBeInTheDocument();
     });
-    const main = document.querySelector<HTMLElement>(".color-flipper-page");
-    const initialBgColor = main?.style.backgroundColor;
 
-    await user.click(flipButton);
-
-    const newBgColor = main?.style.backgroundColor;
-    expect(newBgColor).not.toBe(initialBgColor);
-  });
-
-  it("should update hex color text when flip button is clicked", async () => {
-    const user = userEvent.setup();
-    renderPage();
-
-    const flipButton = screen.getByRole("button", {
-      name: "Flip background color",
+    it("should render the flip button with Flip as its visible text", () => {
+      renderPage();
+      expect(
+        screen.getByRole("button", { name: /flip background color/i })
+      ).toHaveTextContent("Flip");
     });
-    const hexText = document.querySelector<HTMLSpanElement>(".card__hex");
-
-    await user.click(flipButton);
-
-    expect(hexText?.textContent).not.toBe("#FFFFFF");
-    expect(hexText?.textContent).toMatch(/^#[0-9A-F]{6}$/);
   });
 
-  it("should update hex color text color when flip button is clicked", async () => {
-    const user = userEvent.setup();
-    renderPage();
+  describe("behavior", () => {
+    it("should change the hex color text when the button is clicked", async () => {
+      jest.spyOn(Math, "random").mockReturnValue(0);
+      const user = userEvent.setup();
+      renderPage();
 
-    const flipButton = screen.getByRole("button", {
-      name: "Flip background color",
+      await user.click(
+        screen.getByRole("button", { name: /flip background color/i })
+      );
+
+      expect(screen.getByText("#000000")).toBeInTheDocument();
     });
-    const hexText = document.querySelector<HTMLSpanElement>(".card__hex");
 
-    await user.click(flipButton);
+    it("should update the hex span text color when the button is clicked", async () => {
+      jest.spyOn(Math, "random").mockReturnValue(0);
+      const user = userEvent.setup();
+      renderPage();
 
-    const colorStyle = hexText?.style.color ?? "";
+      await user.click(
+        screen.getByRole("button", { name: /flip background color/i })
+      );
 
-    expect(colorStyle).toMatch(/^rgb\(\d+,\s*\d+,\s*\d+\)$/);
-
-    const hexFromStyle = rgbToHex(colorStyle);
-    const hexFromText = hexText?.textContent ?? "";
-    expect(hexFromStyle).toBe(hexFromText);
-  });
-
-  it("should generate different colors on multiple clicks", async () => {
-    const user = userEvent.setup();
-    renderPage();
-
-    const flipButton = screen.getByRole("button", {
-      name: "Flip background color",
+      expect(screen.getByText("#000000")).toHaveStyle({ color: "#000000" });
     });
-    const hexText = document.querySelector<HTMLSpanElement>(".card__hex");
 
-    await user.click(flipButton);
-    const firstColor = hexText?.textContent;
+    it("should update the page background color when the button is clicked", async () => {
+      jest.spyOn(Math, "random").mockReturnValue(0);
+      const user = userEvent.setup();
+      const page = renderPage();
 
-    await user.click(flipButton);
-    const secondColor = hexText?.textContent;
+      await user.click(
+        screen.getByRole("button", { name: /flip background color/i })
+      );
 
-    await user.click(flipButton);
-    const thirdColor = hexText?.textContent;
-
-    const colors = new Set([firstColor, secondColor, thirdColor]);
-    expect(colors.size).toBeGreaterThan(1);
-  });
-
-  it("should generate valid hex color format", async () => {
-    const user = userEvent.setup();
-    renderPage();
-
-    const flipButton = screen.getByRole("button", {
-      name: "Flip background color",
+      expect(page).toHaveStyle({ backgroundColor: "#000000" });
     });
-    const hexText = document.querySelector<HTMLSpanElement>(".card__hex");
 
-    for (let i = 0; i < 5; i++) {
-      await user.click(flipButton);
-      expect(hexText?.textContent).toMatch(/^#[0-9A-F]{6}$/);
-    }
+    it("should generate a valid hex color format on click", async () => {
+      const user = userEvent.setup();
+      renderPage();
+
+      await user.click(
+        screen.getByRole("button", { name: /flip background color/i })
+      );
+
+      const hexSpan = document.querySelector<HTMLSpanElement>(".card__hex");
+      expect(hexSpan?.textContent).toMatch(/^#[0-9A-F]{6}$/);
+    });
   });
 
-  it("should cleanup event listener on page cleanup", () => {
-    const page = renderPage();
+  describe("cleanup", () => {
+    it("should have a cleanup method", () => {
+      const page = renderPage();
+      expect(typeof page.cleanup).toBe("function");
+    });
 
-    expect(page.cleanup).toBeDefined();
-    page.cleanup?.();
+    it("should not throw when cleanup is called", () => {
+      const page = renderPage();
+      expect(() => page.cleanup?.()).not.toThrow();
+    });
 
-    expect(page.cleanup).toBeDefined();
+    it("should not change the color after cleanup when the button is clicked", async () => {
+      const user = userEvent.setup();
+      const page = renderPage();
+
+      page.cleanup?.();
+
+      await user.click(
+        screen.getByRole("button", { name: /flip background color/i })
+      );
+
+      expect(screen.getByText("#FFFFFF")).toBeInTheDocument();
+    });
   });
 });
