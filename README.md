@@ -1,4 +1,4 @@
-# ColorFlipper
+# Color Flipper
 
 ## Educational Purpose
 
@@ -17,9 +17,9 @@ The application will open automatically at `http://localhost:3000`
 
 ## Description
 
-**ColorFlipper** is a minimalist web application that generates random hex colors on demand. Every time you click the **Flip** button, the app picks a new color by randomly combining characters from the hexadecimal alphabet (`0–9`, `A–F`) to form a 6-character hex code. The generated color is instantly applied as the full-page background, giving you an immediate and immersive visual preview. At the same time, the hex value (e.g. `#A3F5C1`) is displayed on screen and its own text color is updated to match, creating a self-referential color label that stays legible against any background.
+**Color Flipper** is a minimalist web application that generates random hex colors on demand. Every time you click the **Flip** button, the app picks a new color by randomly combining characters from the hexadecimal alphabet (`0–9`, `A–F`) to form a 6-character hex code. The generated color is instantly applied as the full-page background, giving you an immediate and immersive visual preview. At the same time, the hex value (e.g. `#A3F5C1`) is displayed on screen and its own text color is updated to match, creating a self-referential color label that stays legible against any background.
 
-The use case is straightforward: designers, developers, or anyone working with color can use ColorFlipper as a quick inspiration tool to discover color combinations, test how a hue looks at full saturation across the entire viewport, or simply grab a hex code to paste into a stylesheet, design file, or color picker. There are no inputs to fill out, no palettes to configure, and no extra steps — one click is all it takes.
+The use case is straightforward: designers, developers, or anyone working with color can use Color Flipper as a quick inspiration tool to discover color combinations, test how a hue looks at full saturation across the entire viewport, or simply grab a hex code to paste into a stylesheet, design file, or color picker. There are no inputs to fill out, no palettes to configure, and no extra steps — one click is all it takes.
 
 ## Technologies used
 

@@ -1,7 +1,7 @@
 {
-  "name": "ColorFlipper",
-  "short_name": "ColorFlipper",
-  "description": "ColorFlipper is a minimalist web application that generates random hex colors on demand.",
+  "name": "Color Flipper",
+  "short_name": "Color Flipper",
+  "description": "Color Flipper is a minimalist web application that generates random hex colors on demand.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
