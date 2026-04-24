@@ -38,40 +38,43 @@ describe("ColorFlipperPage", () => {
   });
 
   describe("behavior", () => {
-    it("should change the hex color text when the button is clicked", async () => {
-      jest.spyOn(Math, "random").mockReturnValue(0);
-      const user = userEvent.setup();
-      renderPage();
+    describe("when Math.random returns 0", () => {
+      beforeEach(() => {
+        jest.spyOn(Math, "random").mockReturnValue(0);
+      });
 
-      await user.click(
-        screen.getByRole("button", { name: /flip background color/i })
-      );
+      it("should change the hex color text when the button is clicked", async () => {
+        const user = userEvent.setup();
+        renderPage();
 
-      expect(screen.getByText("#000000")).toBeInTheDocument();
-    });
+        await user.click(
+          screen.getByRole("button", { name: /flip background color/i })
+        );
 
-    it("should update the hex span text color when the button is clicked", async () => {
-      jest.spyOn(Math, "random").mockReturnValue(0);
-      const user = userEvent.setup();
-      renderPage();
+        expect(screen.getByText("#000000")).toBeInTheDocument();
+      });
 
-      await user.click(
-        screen.getByRole("button", { name: /flip background color/i })
-      );
+      it("should update the hex span text color when the button is clicked", async () => {
+        const user = userEvent.setup();
+        renderPage();
 
-      expect(screen.getByText("#000000")).toHaveStyle({ color: "#000000" });
-    });
+        await user.click(
+          screen.getByRole("button", { name: /flip background color/i })
+        );
 
-    it("should update the page background color when the button is clicked", async () => {
-      jest.spyOn(Math, "random").mockReturnValue(0);
-      const user = userEvent.setup();
-      const page = renderPage();
+        expect(screen.getByText("#000000")).toHaveStyle({ color: "#000000" });
+      });
 
-      await user.click(
-        screen.getByRole("button", { name: /flip background color/i })
-      );
+      it("should update the page background color when the button is clicked", async () => {
+        const user = userEvent.setup();
+        const page = renderPage();
 
-      expect(page).toHaveStyle({ backgroundColor: "#000000" });
+        await user.click(
+          screen.getByRole("button", { name: /flip background color/i })
+        );
+
+        expect(page).toHaveStyle({ backgroundColor: "#000000" });
+      });
     });
 
     it("should generate a valid hex color format on click", async () => {
@@ -82,8 +85,7 @@ describe("ColorFlipperPage", () => {
         screen.getByRole("button", { name: /flip background color/i })
       );
 
-      const hexSpan = document.querySelector<HTMLSpanElement>(".card__hex");
-      expect(hexSpan?.textContent).toMatch(/^#[0-9A-F]{6}$/);
+      expect(screen.getByText(/^#[0-9A-F]{6}$/)).toBeInTheDocument();
     });
   });
 

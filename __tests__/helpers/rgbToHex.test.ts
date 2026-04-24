@@ -36,4 +36,14 @@ describe("rgbToHex", () => {
       expect(rgbToHex("rgb(255,0,0)")).toBe("#FF0000");
     });
   });
+
+  describe("edge cases", () => {
+    it("should throw when given an empty string", () => {
+      expect(() => rgbToHex("")).toThrow();
+    });
+
+    it("should throw when given a string with no digits", () => {
+      expect(() => rgbToHex("no digits here")).toThrow();
+    });
+  });
 });
